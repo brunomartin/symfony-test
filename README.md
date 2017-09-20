@@ -11,7 +11,9 @@ cd symfony-test
 composer install
 mkdir var/data
 bin/console doctrine:schema:update --force
-bin/console server:run
 bin/console fos:user:create admin admin@admin.com admin
 bin/console fos:user:promote admin RA
+bin/console server:run
 ```
+
+go to 127.0.0.1:8000 on your web browser
