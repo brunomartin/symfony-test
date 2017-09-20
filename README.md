@@ -10,7 +10,8 @@ composer install
 mkdir var/data
 bin/console doctrine:schema:update --force
 bin/console fos:user:create admin admin@admin.com admin
-bin/console fos:user:promote admin RA
+bin/console fos:user:promote admin ROLE_ADMIN
+bin/console assets:install
 bin/console server:run
 ```
 
