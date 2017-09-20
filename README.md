@@ -1,13 +1,11 @@
-test
+Symfony SoQut
 ====
 
-A Symfony project created on September 8, 2017, 7:56 am.
+The SoQut Symfony project
 
-To test it :
+To use it :
 
 ```bash
-git clone https://github.com/brunomartin/symfony-test.git
-cd symfony-test
 composer install
 mkdir var/data
 bin/console doctrine:schema:update --force

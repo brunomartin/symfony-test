@@ -4,11 +4,11 @@
 {{parent()}}
 
 
-<link rel="stylesheet" href="css/jquery.fileupload.css">
-<link rel="stylesheet" href="css/jquery.fileupload-ui.css">
+<link rel="stylesheet" href="{{ asset('css/jquery.fileupload.css') }}">
+<link rel="stylesheet" href="{{ asset('css/jquery.fileupload-ui.css') }}">
 <!-- CSS adjustments for browsers with JavaScript disabled -->
-<noscript><link rel="stylesheet" href="css/jquery.fileupload-noscript.css"></noscript>
-<noscript><link rel="stylesheet" href="css/jquery.fileupload-ui-noscript.css"></noscript>
+<noscript><link rel="stylesheet" href="{{ asset('css/jquery.fileupload-noscript.css') }}"></noscript>
+<noscript><link rel="stylesheet" href="{{ asset('css/jquery.fileupload-ui-noscript.css') }}"></noscript>
 
 {% endblock %}
 
@@ -152,14 +152,14 @@
 
 </script>
 
-<script src="/js/tmpl.js"></script>
+<script src="{{ asset('js/tmpl.js') }}"></script>
 
-<script src="js/vendor/jquery.ui.widget.js"></script>
-<script src="js/jquery.iframe-transport.js"></script>
-<script src="js/jquery.fileupload.js"></script>
-<script src="js/jquery.fileupload-process.js"></script>
-<script src="js/jquery.fileupload-validate.js"></script>
-<script src="js/jquery.fileupload-ui.js"></script>
+<script src="{{ asset('js/vendor/jquery.ui.widget.js') }}"></script>
+<script src="{{ asset('js/jquery.iframe-transport.js') }}"></script>
+<script src="{{ asset('js/jquery.fileupload.js') }}"></script>
+<script src="{{ asset('js/jquery.fileupload-process.js') }}"></script>
+<script src="{{ asset('js/jquery.fileupload-validate.js') }}"></script>
+<script src="{{ asset('js/jquery.fileupload-ui.js') }}"></script>
 <script type="text/javascript">
 $(document).ready(function()
 {
