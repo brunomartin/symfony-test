@@ -1,0 +1,36 @@
+{% extends "default/index.html.twig" %}
+
+{% block title %}AppBundle:Employee:list{% endblock %}
+
+{% block body %}
+<h1>Welcome to the Employee:list page</h1>
+
+<div class="container">
+
+{{employees|length}}
+  <table class="table table-bordered">
+  <thead>
+
+    <tr>
+      <th>#</th>
+      <th>Prénom</th>
+      <th>Nom</th>
+      <th>Date de naissance</th>
+    </tr>
+
+  </thead>
+  {%for employee in employees%}
+    <tr>
+      <td>{{employee.id}}</td>
+      <td>{{employee.firstname}}</td>
+      <td>{{employee.lastname}}</td>
+      <td>{{employee.birthdate | date('Y-m-d')}}</td>
+    </tr>
+  {%endfor%}
+  </table>
+
+</div>
+
+
+
+{% endblock %}

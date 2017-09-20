@@ -1,0 +1,21 @@
+{% extends "default/index.html.twig" %}
+
+{% block title %}AppBundle:Employee:add{% endblock %}
+
+{% block body %}
+<h1>Welcome to the Employee:add page</h1>
+
+<div class="container">
+<div class="row">
+<div class="col-md-6">
+
+{{ form_start(form) }}
+
+<input type="submit" value="Create" class="btn btn-default" />
+{{ form_end(form) }}
+
+</div>
+</div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,85 @@
+{% extends 'base.html.twig' %}
+
+{% block stylesheets %}
+<link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}" />
+<link rel="stylesheet" href="{{ asset('css/style.css') }}" />
+{% endblock %}
+
+{% block menu %}
+
+<nav class="navbar navbar-inverse">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#">User Login test</a>
+    </div>
+    <div id="navbar" class="collapse navbar-collapse">
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="{{ path('homepage') }}">Home</a></li>
+        <!-- <li><a href="{{ path('employee_add') }}">Add Employee</a></li>
+        <li><a href="{{ path('employee_list') }}">Employee List</a></li> -->
+        {% if not app.user %}
+        {% else %}
+        <li><a href="{{ path('rawdata_add') }}">Data</a></li> Logout</a></li>
+        {% endif %}
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        {% if not app.user %}
+        <li><a href="{{ path('fos_user_security_login') }}"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+        {% else %}
+        {% if is_granted('ROLE_ADMIN') %}
+        <li><a href="{{ path('admin') }}">Administration</a></li> Logout</a></li>
+        <!-- <li class="dropdown">
+          <a class="dropdown-toggle" data-toggle="dropdown" role="button" href="#">Administration</a>
+          <ul class="dropdown-menu">
+            <li><a href="{{ path('user_add') }}">Add User</a></li>
+            <li><a href="{{ path('user_show') }}">User List</a></li>
+          </ul>
+        </li> -->
+        {% endif %}
+        <li><a href="{{ path('logout') }}"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
+        {% endif %}
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div>
+</nav>
+
+{% endblock %}
+
+{% block body %}
+
+<div class="container">
+  <div id="welcome">
+      <h1><span>Welcome to</span> Symfony {{ constant('Symfony\\Component\\HttpKernel\\Kernel::VERSION') }}</h1>
+  </div>
+
+  {% if app.user %}
+  <p>You are logged as {{ app.user.username }} (<a href="{{ path('logout') }}">logout</a>)</p>
+  {% else %}
+  <p><a href="{{ path('fos_user_security_login') }}">Login</a></p>
+  {% endif %}
+
+  <a href="{{ path('employee_add') }}">Add Employee</a></br>
+  <a href="{{ path('employee_add') }}">Employees</a>
+
+</div>
+
+{% endblock %}
+
+{% block footer %}
+<footer class="navbar-default navbar-fixed-bottom">
+  <div class="container-fluid">
+    <span>Copyright SoQut Imaging 2017</span>
+  </div>
+</footer>
+{% endblock %}
+
+{% block javascripts %}
+<script src="{{ asset('js/jquery.min.js') }}"></script>
+<script src="{{ asset('js/bootstrap.min.js') }}"></script>
+{% endblock %}
