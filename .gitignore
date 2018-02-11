@@ -16,4 +16,8 @@
 /vendor/
 /web/bundles/
 
+!/var/data
+/var/data/*
+!/var/data/README
+
 .DS_Store
